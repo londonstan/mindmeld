@@ -1,0 +1,18 @@
+{
+  "name": "mindmeld-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for FreeMind mind map editing",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "keywords": ["mcp", "freemind", "mindmap"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.5.0",
+    "fast-xml-parser": "^4.3.2"
+  }
+}
