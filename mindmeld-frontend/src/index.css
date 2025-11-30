@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+  
+  body {
+    @apply m-0 p-0 overflow-hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  /* Cytoscape container */
+  .cy-container {
+    @apply w-full h-full bg-gray-50;
+  }
+  
+  /* Mobile-friendly buttons */
+  .btn {
+    @apply px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-medium transition-all duration-200;
+    @apply active:scale-95 touch-manipulation;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 text-gray-800 hover:bg-gray-300;
+  }
+  
+  .btn-icon {
+    @apply p-2 rounded-lg hover:bg-gray-100 transition-colors touch-manipulation;
+  }
+  
+  /* Input fields */
+  .input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500;
+  }
+  
+  /* Mobile drawer */
+  .drawer {
+    @apply fixed inset-y-0 z-40 transition-transform duration-300;
+  }
+  
+  .drawer-left {
+    @apply left-0 transform;
+  }
+  
+  .drawer-left.closed {
+    @apply -translate-x-full;
+  }
+  
+  .drawer-right {
+    @apply right-0 transform;
+  }
+  
+  .drawer-right.closed {
+    @apply translate-x-full;
+  }
+  
+  /* Backdrop */
+  .backdrop {
+    @apply fixed inset-0 bg-black/50 z-30 transition-opacity;
+  }
+}
+
+/* Cytoscape context menu responsive styles */
+.cy-context-menus-cxt-menu {
+  @apply text-sm sm:text-base;
+}
+
+.cy-context-menus-cxt-menuitem {
+  @apply min-w-[120px] sm:min-w-[150px];
+  @apply py-2 px-3 sm:py-2.5 sm:px-4;
+}
+
+/* Touch-friendly node selection */
+.cy-container canvas {
+  touch-action: none;
+}

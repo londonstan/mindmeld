@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  mindmeld-mcp:
+    build: .
+    image: mindmeld-mcp-server:latest
+    container_name: mindmeld-mcp
+    stdin_open: true
+    tty: true
+    volumes:
+      # Mount a local directory for persistent mind map storage
+      # Change the path before the colon to your desired location
+      - ./mindmaps:/data
+    restart: unless-stopped
